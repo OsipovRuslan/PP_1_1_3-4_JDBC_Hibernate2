@@ -4,8 +4,10 @@ import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // реализуйте алгоритм здесь
         User user = new User("Bob", "Simpson", (byte) 16);
         User user1 = new User("Lob", "Simpson2", (byte) 36);
