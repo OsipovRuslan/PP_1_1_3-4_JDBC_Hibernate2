@@ -17,10 +17,11 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() throws SQLException {
         try (Statement statement = connection.createStatement()) {
             connection.setAutoCommit(false);
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
-                                        "name VARCHAR(45) NOT NULL, " +
-                                        "last_name VARCHAR(45) NOT NULL, " +
-                                        "age TINYINT NOT NULL)");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (" +
+                    "id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
+                    "name VARCHAR(45) NOT NULL, " +
+                    "last_name VARCHAR(45) NOT NULL, " +
+                    "age TINYINT NOT NULL)");
             connection.commit();
         } catch (SQLException e) {
             connection.rollback();
